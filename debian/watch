@@ -1,0 +1,12 @@
+version=4
+opts=\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-clone-deep-$1/ \
+ https://github.com/jonschlinkert/clone-deep/tags .*/archive/.*/v?([\d\.]+).tar.gz
+
+opts=\
+ctype=nodejs,\
+component=shallow-clone,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-shallow-clone-$1/ \
+ https://github.com/jonschlinkert/shallow-clone/tags .*/archive/.*/v?([\d\.]+).tar.gz ignore
