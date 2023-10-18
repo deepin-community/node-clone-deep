@@ -3,30 +3,28 @@ Section: javascript
 Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Pirate Praveen <praveen@debian.org>
-Testsuite: autopkgtest-pkg-nodejs
-Build-Depends:
- debhelper-compat (= 13)
- , mocha <!nocheck>
- , node-for-own (>= 1.0.0) <!nocheck>
- , node-is-plain-object (>= 5.0.0~) <!nocheck>
- , node-kind-of (>= 6.0.0) <!nocheck>
- , node-is-extendable <!nocheck>
+Build-Depends: debhelper-compat (= 13)
  , dh-sequence-nodejs
-Standards-Version: 4.6.0
-Homepage: https://github.com/jonschlinkert/clone-deep
-Vcs-Git: https://salsa.debian.org/js-team/node-clone-deep.git
+ , mocha <!nocheck>
+ , node-for-own <!nocheck>
+ , node-is-extendable <!nocheck>
+ , node-is-plain-object (>= 5.0.0~) <!nocheck>
+ , node-kind-of <!nocheck>
+Standards-Version: 4.6.1
 Vcs-Browser: https://salsa.debian.org/js-team/node-clone-deep
+Vcs-Git: https://salsa.debian.org/js-team/node-clone-deep.git
+Homepage: https://github.com/jonschlinkert/clone-deep
+Testsuite: autopkgtest-pkg-nodejs
 Rules-Requires-Root: no
 
 Package: node-clone-deep
 Architecture: all
-Depends:
- ${misc:Depends}
- , nodejs
- , node-for-own (>= 1.0.0)
- , node-is-plain-object (>= 5.0.0~)
- , node-kind-of (>= 6.0.0)
+Depends: node-for-own
  , node-is-extendable
+ , node-is-plain-object (>= 5.0.0~)
+ , node-kind-of
+ , ${misc:Depends}
+Provides: ${nodejs:Provides}
 Description: Recursively (deep) clone JavaScript native types
  This module allows one to recursively (deep) clone JavaScript native types,
  like Object, Array, RegExp, Date as well as primitives.
